@@ -27,3 +27,4 @@ qui sera utilisé par Metabase.
 docker compose up nis2-journal-db
 docker compose exec nis2-journal-db createdb -U postgres nis2-journal
 docker compose exec nis2-journal-db createuser -U postgres metabase
+```

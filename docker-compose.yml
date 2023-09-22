@@ -23,3 +23,12 @@ services:
       - "5432:5432"
     volumes:
       - /var/lib/postgresql/data
+
+  node:
+    image: node
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    command: "./scripts/migrations.sh"
+    depends_on:
+      - nis2-journal-db
