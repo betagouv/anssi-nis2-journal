@@ -20,7 +20,7 @@ services:
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
     ports:
-      - "5432:5432"
+      - "5434:5432"
     volumes:
       - /var/lib/postgresql/data
 
