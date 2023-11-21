@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
 npm install
-npx knex migrate:latest
+npm run typeorm migration:run -- -d data-source.ts
