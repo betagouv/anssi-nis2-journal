@@ -11,14 +11,20 @@ comme outil de _reporting_.
 
 ## Configuration de l'environnement de développement
 
+### Prérequis
+
 Il est nécessaire en prérequis d'avoir installé [Git](https://git-scm.com/),
 [Docker Engine](https://docs.docker.com/get-docker/) et [Docker Compose](https://docs.docker.com/compose/install/).
+
+### Récupération du dépot 
 
 Commencer par récupérer les sources du projet et aller dans le répertoire créé.
 
 ```sh
 git clone https://github.com/betagouv/anssi-nis2-journal.git && cd anssi-nis2-journal
 ```
+
+### Lancement et création de la base de données
 
 Créer la base de données `nis2-journal` et un utilisateur `metabase` 
 qui sera utilisé par Metabase.
@@ -35,19 +41,25 @@ Lancer la migration:
 docker compose up node
 ```
 
+### Configuration de l'environnement
+
+Créer un fichier `.env` en vous basant sur `.env.template` afin de créer les variables d'environnement nécessaires
+
+### Lancement de metabase 
+
 Lancer metabase:
 
 ```sh
 docker compose up metabase
 ```
 
-## Premier lancement
+#### Configuration au premier lancement
 
 Aller sur [http://localhost:3000/]()
 
-![Formulaire de configuration du premier lancement](C:\Users\BastienGallay\dev\clients\beta.gouv\anssi-nis2-journal\docs\images\accueil-premier-lancement.png "Formulaire de configuration du premier lancement")
+![Formulaire de configuration du premier lancement](docs/images/accueil-premier-lancement.png "Formulaire de configuration du premier lancement")
 
-![](docs/images/accueil-choix-moteur-bdd.png)
+![Choix du moteur de Base de données](docs/images/accueil-choix-moteur-bdd.png "Choix du moteur de Base de données")
 
-![](docs/images/accueil-remplissage-infos-bdd.png)
+![Informations de connexion à la base de données](docs/images/accueil-remplissage-infos-bdd.png "Informations de connexion à la base de données")
 
