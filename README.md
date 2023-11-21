@@ -28,3 +28,26 @@ docker compose up nis2-journal-db
 docker compose exec nis2-journal-db createdb -U postgres nis2-journal
 docker compose exec nis2-journal-db createuser -U postgres metabase
 ```
+
+Lancer la migration:
+
+```sh
+docker compose up node
+```
+
+Lancer metabase:
+
+```sh
+docker compose up metabase
+```
+
+## Premier lancement
+
+Aller sur [http://localhost:3000/]()
+
+![Formulaire de configuration du premier lancement](C:\Users\BastienGallay\dev\clients\beta.gouv\anssi-nis2-journal\docs\images\accueil-premier-lancement.png "Formulaire de configuration du premier lancement")
+
+![](docs/images/accueil-choix-moteur-bdd.png)
+
+![](docs/images/accueil-remplissage-infos-bdd.png)
+
