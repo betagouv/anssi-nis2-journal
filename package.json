@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Journal de Mon Portail NIS 2",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "typeorm": "typeorm-ts-node-commonjs"
   },
   "repository": {
     "type": "git",
@@ -18,9 +18,12 @@
   "dependencies": {
     "dotenv": "^16.3.1",
     "knex": "^2.5.1",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.3.17"
   },
   "devDependencies": {
+    "@types/node": "^20.9.3",
     "ts-node": "^10.9.1",
     "typescript": "^5.3.2"
   }
