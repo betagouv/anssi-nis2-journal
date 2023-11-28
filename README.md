@@ -87,7 +87,7 @@ npm install
 
 Il existe deux manières d'exécuter des migrations :
 
-1. Via docke
+1. Via docker
 ```sh
 docker compose up node
 ```
@@ -95,3 +95,24 @@ docker compose up node
 ```shell
 npm run typeorm migration:run -- -d data-source.ts
 ```
+
+## Développement
+
+### Migrations de données
+
+#### Création d'une nouvelle migration
+
+Les migrations de données sont décrites [dans la documentation TypeORM](https://typeorm.io/migrations)
+
+Créer une nouvelle migration :
+
+```shell
+npm run typeorm migration:create .\migrations\<TitreDeLaMigration>
+```
+
+Il est ensuite possible d'utiliser soit du SQL avec `queryRunner.query`, soit l'[API TypeORM](https://typeorm.io/migrations#using-migration-api-to-write-migrations) dédiée
+
+#### Lancement d'une migration
+
+Il est possible de se référer au chapitre [Effectuer une migration](#effectuer-une-migration)
+

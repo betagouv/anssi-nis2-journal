@@ -1,10 +1,6 @@
 import {MigrationInterface, QueryRunner, Table, TableIndex} from "typeorm"
-
-const nomIndexTypeEvenement = "IDX_EVENEMENTS_TYPE";
-const nomTableEvenement = "evenements";
-const nomSchema = "journal_nis2";
-const dans = (schemas: string) => ({t: (table: string) => `${schemas}.${table}`})
-
+import {nomIndexTypeEvenement, nomSchema, nomTableEvenement} from "./constantes";
+import {dans} from "./facilitateurs";
 
 export class CreeTableEvenements1700560447093 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
