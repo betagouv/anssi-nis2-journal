@@ -5,7 +5,7 @@ import {dans} from "../facilitateurs/facilitateurs";
 export class CreeTableEvenements1700560447093 implements MigrationInterface {
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(new Table({
-            // schema: nomsEntites.schemas,
+            schema: nomsEntites.schemas,
             name: nomsEntites.tables.Evenements,
             columns: [
                 {
