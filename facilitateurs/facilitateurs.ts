@@ -1,0 +1,1 @@
+export const dans = (schemas: string) => ({t: (table: string) => `${schemas}.${table}`})

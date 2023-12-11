@@ -63,3 +63,56 @@ Aller sur [http://localhost:3000/]()
 
 ![Informations de connexion à la base de données](docs/images/accueil-remplissage-infos-bdd.png "Informations de connexion à la base de données")
 
+## Utilisations
+
+### Migrations
+
+#### Prérequis
+
+Il est nécessaire d'avoir une version de [NodeJS](https://nodejs.org/) et de  [NPM](https://www.npmjs.com/) (ou équivalent). Se référer au fichier `package.json` pour plus d'information sur les versions nécessaires
+
+Les migrations de données utilisent [type-orm](https://typeorm.io/) et sont écrites en `TypeScript`. Pour démarrer, installer les dépendances nécessaires :
+
+```shell
+npm install
+```
+
+#### Fichiers utiles
+
+- `.env` (_ignoré par Git_) permet de configurer les variables d'environnement, en particulier la chaine de connexion à la base de donnés. Les informations utiles concernant les variables de ce fichier peuvent être trouvées dans [`.env.template`](.env.template)
+- [`data-source.ts`](data-source.ts) définie l'organisation de la source de données pour leur utilisation par type-orm
+- [`migrations/`](migrations/) contient l'ensemble des migrations, une étape par fichier
+
+#### Effectuer une migration
+
+Il existe deux manières d'exécuter des migrations :
+
+1. Via docker
+```sh
+docker compose up node
+```
+2. Directement dans l'environnement courant
+```shell
+npm run typeorm migration:run -- -d data-source.ts
+```
+
+## Développement
+
+### Migrations de données
+
+#### Création d'une nouvelle migration
+
+Les migrations de données sont décrites [dans la documentation TypeORM](https://typeorm.io/migrations)
+
+Créer une nouvelle migration :
+
+```shell
+npm run typeorm migration:create .\migrations\<TitreDeLaMigration>
+```
+
+Il est ensuite possible d'utiliser soit du SQL avec `queryRunner.query`, soit l'[API TypeORM](https://typeorm.io/migrations#using-migration-api-to-write-migrations) dédiée
+
+#### Lancement d'une migration
+
+Il est possible de se référer au chapitre [Effectuer une migration](#effectuer-une-migration)
+
