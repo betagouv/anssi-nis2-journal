@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-npm install
+npm ci
 npm run typeorm migration:run -- -d data-source.ts
