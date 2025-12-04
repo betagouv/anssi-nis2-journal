@@ -74,7 +74,7 @@ Il est nécessaire d'avoir une version de [NodeJS](https://nodejs.org/) et de  [
 Les migrations de données utilisent [type-orm](https://typeorm.io/) et sont écrites en `TypeScript`. Pour démarrer, installer les dépendances nécessaires :
 
 ```shell
-npm install
+npm ci
 ```
 
 #### Fichiers utiles
